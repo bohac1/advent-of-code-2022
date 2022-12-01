@@ -5,6 +5,7 @@
 int cmpint(const void * lhs, const void * rhs) {
     return *(int *)lhs - *(int *)rhs;
 }
+
 int main(int argc, char const *argv[]) {
     FILE * fp = fopen("input/day-1.txt", "r");
     char * line = NULL;
