@@ -25,16 +25,23 @@ int main(int argc, char const *argv[]) {
         if(strcmp(line, "\n") == 0) {
             numbers = realloc(numbers, (numbers_length++) * sizeof(int));
             numbers[numbers_length-1] = cur;
-            printf("%d, %zu\n", numbers[numbers_length-1], numbers_length);
             cur = 0;
         }
     }
+
+    fclose(fp);
+    free(line);
+
     // sort the numbers
     qsort(numbers, numbers_length, sizeof(int), cmpint);
-    printf("%d\n", numbers[numbers_length-1]);
-    printf("%d\n", numbers[numbers_length-2]);
-    printf("%d\n", numbers[numbers_length-3]);
+    printf("first: %d\n", numbers[numbers_length-1]);
+    printf("second: %d\n", numbers[numbers_length-2]);
+    printf("third: %d\n", numbers[numbers_length-3]);
+    puts("===============");
     int total = numbers[numbers_length-1] + numbers[numbers_length-2] + numbers[numbers_length-3];
+
+    free(numbers);
+
     printf("total: %d\n", total);
     return 0;
 }

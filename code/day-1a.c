@@ -21,6 +21,10 @@ int main(int argc, char const *argv[]) {
             cur = 0;
         }
     }
+
+    fclose(fp);
+    free(line);
+
     printf("%d\n", max);
     return 0;
 }

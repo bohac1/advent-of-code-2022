@@ -33,6 +33,7 @@ int main(int argc, char const *argv[]) {
     }
 
     fclose(fp);
+    free(line);
 
     printf("%d\n", sum);
     return 0;
