@@ -53,7 +53,6 @@ int main(int argc, char const *argv[]) {
     char * line = NULL;
     size_t len = 0;
     ssize_t chars_read;
-    int sum = 0;
     struct pile stacks[STACK_NUM];
 
     if (fp == NULL) {
